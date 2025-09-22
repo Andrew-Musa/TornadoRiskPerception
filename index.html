@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tornado Risk Perception Research | USF Weather Lab</title>
+    <meta name="description" content="Interactive research platform exploring tornado risk perception, public understanding, and community preparedness strategies.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-cloud-showers-heavy"></i>
+                <span>USF Tornado Research</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#assessment" class="nav-link">Risk Assessment</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#data" class="nav-link">Data & Insights</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#resources" class="nav-link">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Understanding Tornado Risk Perception</h1>
+                <p class="hero-subtitle">Advancing community preparedness through behavioral research and data-driven insights</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="1200">0</span>
+                        <span class="stat-label">Annual Tornadoes (US)</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="80">0</span>
+                        <span class="stat-label">Average Fatalities</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="60">0</span>
+                        <span class="stat-label">% Perception Gap</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#assessment" class="btn btn-primary">Take Risk Assessment</a>
+                    <a href="#research" class="btn btn-secondary">Explore Research</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="tornado-visualization">
+                    <div class="tornado-cone"></div>
+                    <div class="debris-particles"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Research Overview -->
+    <section id="research" class="research">
+        <div class="container">
+            <div class="section-header">
+                <h2>Research Focus Areas</h2>
+                <p>Investigating the psychological and behavioral factors that influence tornado risk perception</p>
+            </div>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Cognitive Biases</h3>
+                    <p>Examining how mental shortcuts and biases affect tornado risk assessment and decision-making processes.</p>
+                    <ul class="research-points">
+                        <li>Availability heuristic effects</li>
+                        <li>Optimism bias patterns</li>
+                        <li>Risk normalization tendencies</li>
+                    </ul>
+                </div>
+                <div class="research-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Social Influences</h3>
+                    <p>Understanding how community dynamics, social networks, and cultural factors shape tornado risk perception.</p>
+                    <ul class="research-points">
+                        <li>Peer influence on preparedness</li>
+                        <li>Community resilience factors</li>
+                        <li>Information sharing patterns</li>
+                    </ul>
+                </div>
+                <div class="research-card">
+                    <div class="card-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3>Communication Effectiveness</h3>
+                    <p>Evaluating how different warning systems and communication strategies impact public response.</p>
+                    <ul class="research-points">
+                        <li>Warning message clarity</li>
+                        <li>Multi-channel communication</li>
+                        <li>Response time optimization</li>
+                    </ul>
+                </div>
+                <div class="research-card">
+                    <div class="card-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Geographic Factors</h3>
+                    <p>Analyzing how location-specific variables influence tornado risk awareness and preparedness levels.</p>
+                    <ul class="research-points">
+                        <li>Regional risk variations</li>
+                        <li>Historical impact correlation</li>
+                        <li>Terrain influence analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Risk Assessment -->
+    <section id="assessment" class="assessment">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interactive Risk Perception Assessment</h2>
+                <p>Discover how your tornado risk perception compares to actual meteorological data</p>
+            </div>
+            <div class="assessment-container">
+                <div class="assessment-form">
+                    <div class="form-step active" data-step="1">
+                        <h3>Location & Experience</h3>
+                        <div class="form-group">
+                            <label for="location">Your Location (ZIP Code)</label>
+                            <input type="text" id="location" placeholder="e.g., 33620">
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Have you experienced a tornado?</label>
+                            <select id="experience">
+                                <option value="">Select...</option>
+                                <option value="direct">Yes, directly</option>
+                                <option value="nearby">Yes, nearby area</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary next-step">Next</button>
+                    </div>
+                    
+                    <div class="form-step" data-step="2">
+                        <h3>Risk Perception</h3>
+                        <div class="form-group">
+                            <label>How likely do you think a tornado will affect your area in the next 5 years?</label>
+                            <div class="slider-container">
+                                <input type="range" id="likelihood" min="0" max="100" value="50">
+                                <span class="slider-value">50%</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>How prepared do you feel for a tornado?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="preparedness" value="very"> Very prepared</label>
+                                <label><input type="radio" name="preparedness" value="somewhat"> Somewhat prepared</label>
+                                <label><input type="radio" name="preparedness" value="not"> Not prepared</label>
+                            </div>
+                        </div>
+                        <div class="step-buttons">
+                            <button class="btn btn-secondary prev-step">Previous</button>
+                            <button class="btn btn-primary next-step">Next</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-step" data-step="3">
+                        <h3>Information Sources</h3>
+                        <div class="form-group">
+                            <label>Primary source for weather information:</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="sources" value="tv"> TV Weather</label>
+                                <label><input type="checkbox" name="sources" value="app"> Weather Apps</label>
+                                <label><input type="checkbox" name="sources" value="radio"> Radio</label>
+                                <label><input type="checkbox" name="sources" value="social"> Social Media</label>
+                                <label><input type="checkbox" name="sources" value="alerts"> Emergency Alerts</label>
+                            </div>
+                        </div>
+                        <div class="step-buttons">
+                            <button class="btn btn-secondary prev-step">Previous</button>
+                            <button class="btn btn-primary calculate-results">Get Results</button>
+                        </div>
+                    </div>
+                    
+                    <div class="assessment-results" id="results" style="display: none;">
+                        <h3>Your Risk Perception Profile</h3>
+                        <div class="results-content">
+                            <!-- Results will be populated by JavaScript -->
+                        </div>
+                        <button class="btn btn-primary restart-assessment">Take Again</button>
+                    </div>
+                </div>
+                
+                <div class="assessment-info">
+                    <div class="info-card">
+                        <h4>About This Assessment</h4>
+                        <p>This tool evaluates your tornado risk perception against actual meteorological data and research findings. It helps identify potential gaps between perceived and actual risk.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Research Application</h4>
+                        <p>Your responses contribute to understanding patterns in risk perception across different demographics and geographic regions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualization -->
+    <section id="data" class="data-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Data & Insights</h2>
+                <p>Visualizing tornado risk patterns and perception research findings</p>
+            </div>
+            <div class="data-grid">
+                <div class="chart-container">
+                    <h3>Tornado Frequency by State (2020-2023)</h3>
+                    <canvas id="tornadoChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Risk Perception vs. Actual Risk</h3>
+                    <canvas id="perceptionChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Preparedness Levels by Region</h3>
+                    <canvas id="preparednessChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Information Source Preferences</h3>
+                    <canvas id="sourcesChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <div class="section-header">
+                <h2>Educational Resources</h2>
+                <p>Tools and information to improve tornado preparedness and risk understanding</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safety Guidelines</h3>
+                    <p>Comprehensive tornado safety protocols and emergency procedures for homes, schools, and workplaces.</p>
+                    <a href="#" class="resource-link">View Guidelines <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home Preparedness</h3>
+                    <p>Step-by-step guide to tornado-proofing your home and creating an emergency plan for your family.</p>
+                    <a href="#" class="resource-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Emergency Apps</h3>
+                    <p>Recommended mobile applications for real-time weather alerts and emergency communication.</p>
+                    <a href="#" class="resource-link">Download Apps <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Educational Materials</h3>
+                    <p>Research papers, infographics, and educational content about tornado science and risk perception.</p>
+                    <a href="#" class="resource-link">Access Materials <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact & Collaboration</h2>
+                <p>Get in touch with the USF Weather Lab research team</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>University of South Florida</h4>
+                            <p>College of Marine Science<br>Weather Lab Research Division</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>4202 E Fowler Ave<br>Tampa, FL 33620</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>weatherlab@usf.edu<br>tornado.research@usf.edu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-cloud-showers-heavy"></i>
+                        <span>USF Tornado Research</span>
+                    </div>
+                    <p>Advancing tornado risk perception research to build more resilient communities.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Research Areas</h4>
+                    <ul>
+                        <li><a href="#">Risk Perception</a></li>
+                        <li><a href="#">Community Preparedness</a></li>
+                        <li><a href="#">Warning Systems</a></li>
+                        <li><a href="#">Behavioral Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Safety Guidelines</a></li>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Data Portal</a></li>
+                        <li><a href="#">Emergency Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Collaborate</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 University of South Florida Weather Lab. All rights reserved.</p>
+                <p>Tornado Risk Perception Research Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
