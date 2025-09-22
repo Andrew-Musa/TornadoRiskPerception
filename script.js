@@ -65,6 +65,22 @@ document.querySelectorAll('.stat-number').forEach(counter => {
     counterObserver.observe(counter);
 });
 
+// Animate risk meters
+function animateRiskMeters() {
+    const meters = document.querySelectorAll('.meter-fill');
+    meters.forEach((meter, index) => {
+        setTimeout(() => {
+            const targetWidth = meter.dataset.width;
+            meter.style.width = targetWidth;
+        }, index * 300 + 1000); // Stagger the animations
+    });
+}
+
+// Start meter animations after page load
+window.addEventListener('load', () => {
+    setTimeout(animateRiskMeters, 500);
+});
+
 // Risk Assessment Form
 class RiskAssessment {
     constructor() {
@@ -568,35 +584,51 @@ class DataVisualization {
         if (!ctx) return;
 
         this.charts.sources = new Chart(ctx, {
-            type: 'horizontalBar',
+            type: 'bar',
             data: {
                 labels: ['TV Weather', 'Weather Apps', 'Emergency Alerts', 'Social Media', 'Radio'],
                 datasets: [{
                     label: 'Usage Percentage',
                     data: [68, 52, 41, 35, 28],
-                    backgroundColor: '#3b82f6',
-                    borderColor: '#1d4ed8',
-                    borderWidth: 1
+                    backgroundColor: [
+                        '#3b82f6',
+                        '#10b981',
+                        '#f59e0b',
+                        '#8b5cf6',
+                        '#ef4444'
+                    ],
+                    borderColor: [
+                        '#1d4ed8',
+                        '#059669',
+                        '#d97706',
+                        '#7c3aed',
+                        '#dc2626'
+                    ],
+                    borderWidth: 2
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                indexAxis: 'y',
                 plugins: {
                     legend: {
                         display: false
                     }
                 },
                 scales: {
-                    x: {
+                    y: {
                         beginAtZero: true,
-                        max: 100,
+                        max: 80,
                         grid: {
                             color: '#e2e8f0'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
                         }
                     },
-                    y: {
+                    x: {
                         grid: {
                             display: false
                         }

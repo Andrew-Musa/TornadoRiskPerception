@@ -270,53 +270,129 @@ p {
     position: relative;
 }
 
-.tornado-visualization {
+.data-dashboard {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    width: 350px;
+    border: 1px solid var(--gray-200);
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.dashboard-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+}
+
+.risk-meters {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.risk-meter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.meter-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.meter-location {
+    color: var(--gray-700);
+}
+
+.meter-value {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.meter-bar {
+    height: 8px;
+    background-color: var(--gray-200);
+    border-radius: 4px;
+    overflow: hidden;
     position: relative;
-    width: 300px;
-    height: 400px;
 }
 
-.tornado-cone {
-    width: 0;
-    height: 0;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-bottom: 400px solid var(--gray-400);
-    opacity: 0.7;
-    animation: spin 10s linear infinite;
-    transform-origin: 50% 100%;
-}
-
-.debris-particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+.meter-fill {
     height: 100%;
-    pointer-events: none;
+    border-radius: 4px;
+    transition: width 2s ease-in-out;
+    position: relative;
 }
 
-.debris-particles::before,
-.debris-particles::after {
-    content: '';
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    animation: float 3s ease-in-out infinite;
+.meter-fill.high {
+    background: linear-gradient(90deg, var(--danger-color) 0%, #dc2626 100%);
+    animation: pulseRed 2s ease-in-out infinite;
 }
 
-.debris-particles::before {
-    top: 20%;
-    left: 30%;
-    animation-delay: 0s;
+.meter-fill.moderate {
+    background: linear-gradient(90deg, var(--warning-color) 0%, #d97706 100%);
+    animation: pulseOrange 2s ease-in-out infinite;
 }
 
-.debris-particles::after {
-    top: 40%;
-    right: 20%;
-    animation-delay: 1.5s;
+.meter-fill.low {
+    background: linear-gradient(90deg, var(--success-color) 0%, #059669 100%);
+    animation: pulseGreen 2s ease-in-out infinite;
+}
+
+.risk-indicators {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gray-200);
+}
+
+.risk-indicator {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--gray-50);
+    border-radius: var(--border-radius);
+}
+
+.indicator-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.indicator-icon.warning {
+    color: var(--warning-color);
+    animation: flash 2s ease-in-out infinite;
+}
+
+.indicator-icon.info {
+    color: var(--primary-color);
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.indicator-text {
+    font-size: 0.75rem;
+    color: var(--gray-600);
+    font-weight: 500;
 }
 
 .scroll-indicator {
@@ -810,14 +886,29 @@ p {
 }
 
 /* Animations */
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+@keyframes pulseRed {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+@keyframes pulseOrange {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes pulseGreen {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 @keyframes bounce {
@@ -895,15 +986,14 @@ p {
         flex-wrap: wrap;
     }
 
-    .tornado-visualization {
-        width: 200px;
-        height: 300px;
+    .data-dashboard {
+        width: 300px;
+        padding: 1.5rem;
     }
 
-    .tornado-cone {
-        border-left-width: 100px;
-        border-right-width: 100px;
-        border-bottom-width: 300px;
+    .risk-indicators {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
     }
 
     .assessment-container {
